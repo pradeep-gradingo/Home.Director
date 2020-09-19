@@ -1,0 +1,14 @@
+[Unit]
+Description=Home Director Service
+After=network.target
+[Service]
+ExecStart=/home/pi/HomeDirectorApi/Home.Director.Api
+WorkingDirectory=/home/pi/HomeDirectorApi/
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=HomeDirectorApi
+Restart=always
+RestartSec=10
+[Install]
+WantedBy=multi-user.target
+Alias=HomeDirectorApi.service
